@@ -25,7 +25,6 @@ func løkke() string {
 		for _, i := range text1 {
 			if i == 0x0D {
 				return "ja"
-			} else {
 			}
 		}
 	}
