@@ -6,16 +6,6 @@ import (
 	"os"
 )
 
-/*
-func les() []byte {
-	text1, err := ioutil.ReadFile("text1.txt") //text1 og 2 blir []byte
-	if err != nil {
-		fmt.Print(err)
-	}
-	return text1
-}
-*/
-
 func løkke() string {
 	velgFil := os.Args[1]                  //skriv inn: 'text1.txt' eller 'text2.txt'
 	text1, err := ioutil.ReadFile(velgFil) //text1 og 2 blir []byte
@@ -43,6 +33,7 @@ func main() {
 
 //////////////////////////////////////////////////////////////////////////////
 /*
+Et førsteutkast - kan sjekke senere om jeg kan få den til å funke.
 func main() {
 	LesOgLøkke()
 	fmt.Println()
