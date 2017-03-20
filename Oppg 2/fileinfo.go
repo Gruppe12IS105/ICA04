@@ -12,8 +12,13 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	i64 := file.Size()
+	b := float64(i64)
+	kib := b / 1024
+	mib := kib / 1024
+	gib := mib / 1024
 	fmt.Println("Navn:", filnavn)
-	fmt.Println("Size: ", file.Size(), "bytes, ", "kibibytes, ", "mibibytes, ", "gibibytes")
+	fmt.Println("Size:", b, "bytes,", kib, "kibibytes,", mib, "mibibytes,", gib, "gibibytes")
 
 	if file.Mode().IsDir() == true {
 		fmt.Println("Is a directory")
@@ -27,23 +32,23 @@ func main() {
 	}
 	fmt.Println("Has Unix permissions bits: ", file.Mode().Perm())
 
-//
-// 	switch mode := file.Mode(); {
-// 	case mode.IsDir():
-// 			fmt.Println("directory", file.Mode().IsDir())
-// 	case mode.IsRegular():
-// 		fmt.Println("regular file", file.Mode().IsRegular())
-// 	case mode&os.ModePerm != 0:
-// 		fmt.Println("Has Unix permissions bits: ", file.Mode().Perm())
-// 	case mode&os.ModeAppend != 0:
-// 		fmt.Println("append only")
-// 	case mode&os.ModeDevice != 0:
-// 		fmt.Println("device file")
-// 	case mode&os.ModeCharDevice != 0:
-// 		fmt.Println("Unix character device")
-// //	case ----
-// //		fmt.Println("Unix block device")
-// 	case mode&os.ModeSymlink != 0:
-// 		fmt.Println("symbolic link")
-// 	}
+	//
+	// 	switch mode := file.Mode(); {
+	// 	case mode.IsDir():
+	// 			fmt.Println("directory", file.Mode().IsDir())
+	// 	case mode.IsRegular():
+	// 		fmt.Println("regular file", file.Mode().IsRegular())
+	// 	case mode&os.ModePerm != 0:
+	// 		fmt.Println("Has Unix permissions bits: ", file.Mode().Perm())
+	// 	case mode&os.ModeAppend != 0:
+	// 		fmt.Println("append only")
+	// 	case mode&os.ModeDevice != 0:
+	// 		fmt.Println("device file")
+	// 	case mode&os.ModeCharDevice != 0:
+	// 		fmt.Println("Unix character device")
+	// //	case ----
+	// //		fmt.Println("Unix block device")
+	// 	case mode&os.ModeSymlink != 0:
+	// 		fmt.Println("symbolic link")
+	// 	}
 }
