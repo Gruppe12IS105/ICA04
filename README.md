@@ -2,7 +2,7 @@
 ICA04 IS-105
 
 ### En slags midlertidig logg:
-**Er bare å redigere denne - er kun et slags utkast for å fort kunne se hvor vi ligger hen på ICA04** 
+**Er bare å redigere denne - er kun et slags utkast for å fort kunne se hvor vi ligger hen på ICA04**
 
 #### Oppgave 1:
 - **Koding er ferdig**
