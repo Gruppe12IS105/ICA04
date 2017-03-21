@@ -12,15 +12,18 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	/*
+		En litt midlertidig løsning til vi får
+		import"./github.com/alecthomas/units" til å funke.
+		Har kopiert pakken units slik at den blir importert,
+		men metodene kan ikke brukes til tross for at de er public
+	*/
 	i64 := file.Size()
 	b := float64(i64)
 	kib := b / 1024
 	mib := kib / 1024
-<<<<<<< HEAD
 	gib := mib / 1024
-
-=======
-	gib := mib / 1024 //Er veldig usikre på disse, utskriften gir meningen, men finner ikke dette logisk.
 
 	/*
 		file.Size() blir ikke alltid angitt i bytes.
@@ -32,10 +35,10 @@ func main() {
 
 	/*
 		På .app-filer står de listet opp som "Directory" (og generelt alle filer
-		med "Show package content") som tar 105 bytes?? Finner ingen filer i contents
-		som tar 105 bytes...
+		med "Show package content" (valg ved høyreklikk på macOS))
+		som tar 105 bytes. Finner ingen filer i contents
+		som tar 105 bytes heller.
 	*/
->>>>>>> EmilRuud
 	fmt.Println("------------------------------------")
 	fmt.Println("Information about a file:", filnavn)
 	fmt.Println("Size:", b, "bytes,", kib, "kibibytes,", mib, "mibibytes,", gib, "gibibytes")
@@ -65,13 +68,8 @@ func main() {
 	} else {
 		fmt.Println("Is not a Unix character device")
 	}
-<<<<<<< HEAD
-//	if file.Mode()
-//		fmt.Println("Unix block device")
-=======
 	//	if file.Mode()
 	//		fmt.Println("Unix block device")
->>>>>>> EmilRuud
 	if file.Mode()&os.ModeSymlink == os.ModeSymlink {
 		fmt.Println("Is a symbolic link")
 	} else {
@@ -79,13 +77,8 @@ func main() {
 	}
 	fmt.Println("------------------------------------")
 
-<<<<<<< HEAD
-// TEST
-	fmt.Println("------TEST--------TEST-------TEST----------")
-=======
 	// TEST
 	fmt.Println("------Vil bli samme utskrift, men er litt alternativ koding----------")
->>>>>>> EmilRuud
 	fmt.Println("Information about a file:", filnavn)
 	fmt.Println("Size:", b, "bytes,", kib, "kibibytes,", mib, "mibibytes,", gib, "gibibytes")
 	if file.Mode().IsDir() == true {
@@ -114,13 +107,8 @@ func main() {
 	} else {
 		fmt.Println("Is not a Unix character device")
 	}
-<<<<<<< HEAD
-//	if file.Mode()
-//		fmt.Println("Unix block device")
-=======
 	//	if file.Mode()
 	//		fmt.Println("Unix block device")
->>>>>>> EmilRuud
 	if file.Mode()&os.ModeSymlink != 0 {
 		fmt.Println("Is a symbolic link")
 	} else {
