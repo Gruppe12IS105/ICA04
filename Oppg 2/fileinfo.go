@@ -70,7 +70,7 @@ func main() {
 	fmt.Println("------------------------------------")
 
 	// TEST
-	fmt.Println("------TEST--------TEST-------TEST----------")
+	fmt.Println("------Vil bli samme utskrift, men er litt alternativ koding----------")
 	fmt.Println("Information about a file:", filnavn)
 	fmt.Println("Size:", b, "bytes,", kib, "kibibytes,", mib, "mibibytes,", gib, "gibibytes")
 	if file.Mode().IsDir() == true {
