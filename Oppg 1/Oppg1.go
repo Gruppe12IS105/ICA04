@@ -19,7 +19,7 @@ func løkke() string {
 		}
 	}
 	fmt.Printf("%s", txtfil)
-	fmt.Println("__________________________")
+	fmt.Println()
 	return "nei"
 }
 func main() {
