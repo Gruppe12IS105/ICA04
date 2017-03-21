@@ -7,18 +7,19 @@ import (
 )
 
 func løkke() string {
-	velgFil := os.Args[1]                  //skriv inn: 'text1.txt' eller 'text2.txt'
-	text1, err := ioutil.ReadFile(velgFil) //text1 og 2 blir []byte
+	velgFil := os.Args[1]                   //skriv inn: 'text1.txt' eller 'text2.txt'
+	txtfil, err := ioutil.ReadFile(velgFil) //text1 og 2 blir []byte
 	if err != nil {
 		return "Error"
 	} else {
-		for _, i := range text1 {
+		for _, i := range txtfil {
 			if i == 0x0D {
 				return "ja"
-			} else {
 			}
 		}
 	}
+	fmt.Printf("%s", txtfil)
+	fmt.Println("__________________________")
 	return "nei"
 }
 func main() {
@@ -33,7 +34,9 @@ func main() {
 }
 
 //////////////////////////////////////////////////////////////////////////////
+
 /*
+Et førsteutkast - kan sjekke senere om jeg kan få den til å funke.
 func main() {
 	LesOgLøkke()
 	fmt.Println()

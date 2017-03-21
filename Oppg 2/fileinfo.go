@@ -16,8 +16,26 @@ func main() {
 	b := float64(i64)
 	kib := b / 1024
 	mib := kib / 1024
+<<<<<<< HEAD
 	gib := mib / 1024
 
+=======
+	gib := mib / 1024 //Er veldig usikre på disse, utskriften gir meningen, men finner ikke dette logisk.
+
+	/*
+		file.Size() blir ikke alltid angitt i bytes.
+		Ergo så dette kan være en potensiell bug, men har testet den
+		på filer som tar flere Kb, og har vært riktig så langt.
+		**Dersom ikke file.Size() er korrekt vil ikke resten (kib, mib og gib)
+		være det heller!!!**
+	*/
+
+	/*
+		På .app-filer står de listet opp som "Directory" (og generelt alle filer
+		med "Show package content") som tar 105 bytes?? Finner ingen filer i contents
+		som tar 105 bytes...
+	*/
+>>>>>>> EmilRuud
 	fmt.Println("------------------------------------")
 	fmt.Println("Information about a file:", filnavn)
 	fmt.Println("Size:", b, "bytes,", kib, "kibibytes,", mib, "mibibytes,", gib, "gibibytes")
@@ -47,8 +65,13 @@ func main() {
 	} else {
 		fmt.Println("Is not a Unix character device")
 	}
+<<<<<<< HEAD
 //	if file.Mode()
 //		fmt.Println("Unix block device")
+=======
+	//	if file.Mode()
+	//		fmt.Println("Unix block device")
+>>>>>>> EmilRuud
 	if file.Mode()&os.ModeSymlink == os.ModeSymlink {
 		fmt.Println("Is a symbolic link")
 	} else {
@@ -56,8 +79,13 @@ func main() {
 	}
 	fmt.Println("------------------------------------")
 
+<<<<<<< HEAD
 // TEST
 	fmt.Println("------TEST--------TEST-------TEST----------")
+=======
+	// TEST
+	fmt.Println("------Vil bli samme utskrift, men er litt alternativ koding----------")
+>>>>>>> EmilRuud
 	fmt.Println("Information about a file:", filnavn)
 	fmt.Println("Size:", b, "bytes,", kib, "kibibytes,", mib, "mibibytes,", gib, "gibibytes")
 	if file.Mode().IsDir() == true {
@@ -86,8 +114,13 @@ func main() {
 	} else {
 		fmt.Println("Is not a Unix character device")
 	}
+<<<<<<< HEAD
 //	if file.Mode()
 //		fmt.Println("Unix block device")
+=======
+	//	if file.Mode()
+	//		fmt.Println("Unix block device")
+>>>>>>> EmilRuud
 	if file.Mode()&os.ModeSymlink != 0 {
 		fmt.Println("Is a symbolic link")
 	} else {
