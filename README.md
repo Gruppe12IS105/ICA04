@@ -16,5 +16,4 @@
 - (Nicolay) holder på med benchmark-testing (vil være til god hjelp på oppgave 4 i ICA02).
 
 #### Oppgave 4:
-- a, b, c og d er ferdig.
-- (Nikki) "e" er in progress.
+- a, b, c, d og e er ferdig.
