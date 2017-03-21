@@ -18,6 +18,8 @@ func løkke() string {
 			}
 		}
 	}
+	fmt.Printf("%s", txtfil)
+	fmt.Println("__________________________")
 	return "nei"
 }
 func main() {
