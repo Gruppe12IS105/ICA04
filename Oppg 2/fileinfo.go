@@ -12,11 +12,18 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	/*
+		En litt midlertidig løsning til vi får
+		import"./github.com/alecthomas/units" til å funke.
+		Har kopiert pakken units slik at den blir importert,
+		men metodene kan ikke brukes til tross for at de er public
+	*/
 	i64 := file.Size()
 	b := float64(i64)
 	kib := b / 1024
 	mib := kib / 1024
-	gib := mib / 1024 //Er veldig usikre på disse, utskriften gir meningen, men finner ikke dette logisk.
+	gib := mib / 1024
 
 	/*
 		file.Size() blir ikke alltid angitt i bytes.
@@ -28,8 +35,9 @@ func main() {
 
 	/*
 		På .app-filer står de listet opp som "Directory" (og generelt alle filer
-		med "Show package content") som tar 105 bytes?? Finner ingen filer i contents
-		som tar 105 bytes...
+		med "Show package content" (valg ved høyreklikk på macOS))
+		som tar 105 bytes. Finner ingen filer i contents
+		som tar 105 bytes heller.
 	*/
 	fmt.Println("------------------------------------")
 	fmt.Println("Information about a file:", filnavn)
