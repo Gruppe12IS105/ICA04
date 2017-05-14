@@ -68,8 +68,11 @@ func main() {
 	} else {
 		fmt.Println("Is not a Unix character device")
 	}
+
 	//	if file.Mode()
-	//		fmt.Println("Unix block device")
+	//		fmt.Println("IS a Unix block device")
+
+
 	if file.Mode()&os.ModeSymlink == os.ModeSymlink {
 		fmt.Println("Is a symbolic link")
 	} else {
