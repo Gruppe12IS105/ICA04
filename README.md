@@ -10,7 +10,6 @@
 
 #### Oppgave 2:
 - **Koding er ferdig**
-- Får ikke brukt metodene i pakken units, selv om den kopiert ut av vendor-mappen. Den midlertidige løsningen ser ut til å funke så langt.
 
 #### Oppgave 3:
 - (Nicolay) holder på med benchmark-testing (vil være til god hjelp på oppgave 4 i ICA02).
