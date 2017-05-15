@@ -11,7 +11,7 @@ import (
 func main() {
 	filePtr := flag.String("f", "", "filnavn")
 	flag.Parse()
-	//filnavn := os.Args[1]
+	
 	file, err := os.Stat(*filePtr)
 	if err != nil {
 		log.Fatal(err)
