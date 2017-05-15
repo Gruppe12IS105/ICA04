@@ -60,16 +60,18 @@ func main() {
 	}
 	if file.Mode()&os.ModeDevice == os.ModeDevice {
 		fmt.Println("Is a device file")
+		if file.Mode()&os.ModeCharDevice == os.ModeCharDevice {
+			fmt.Println("Is a Unix character device")
+			fmt.Println("Is not a Unix block device")
+		} else {
+			fmt.Println("Is not a Unix character device")
+			fmt.Println("Is a Unix block device")
+		}
 	} else {
 		fmt.Println("Is not a device file")
-	}
-	if file.Mode()&os.ModeCharDevice == os.ModeCharDevice {
-		fmt.Println("Is a Unix character device")
-	} else {
 		fmt.Println("Is not a Unix character device")
+		fmt.Println("Is not a Unix block device")
 	}
-	//	if file.Mode()
-	//		fmt.Println("Unix block device")
 	if file.Mode()&os.ModeSymlink == os.ModeSymlink {
 		fmt.Println("Is a symbolic link")
 	} else {
