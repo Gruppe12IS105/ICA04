@@ -1,17 +1,23 @@
+// Copyright 2017 Gruppe 12 IS-105. All rights reserved.
 package main
 
 import (
 	"fmt"
 	"log"
 	"os"
+	"flag"
+	"path/filepath"
 )
 
 func main() {
-	filnavn := os.Args[1]
-	file, err := os.Stat(filnavn)
+	filePtr := flag.String("f", "", "filnavn")
+	flag.Parse()
+	
+	file, err := os.Stat(*filePtr)
 	if err != nil {
 		log.Fatal(err)
 	}
+	path, err := filepath.Abs(*filePtr)
 
 	i64 := file.Size()
 	b := float64(i64)
@@ -20,7 +26,7 @@ func main() {
 	gib := mib / 1024
 
 	fmt.Println("------------------------------------")
-	fmt.Println("Information about a file:", filnavn)
+	fmt.Printf("Information about a file: %s \n", path)
 	fmt.Println("Size:", b, "bytes,", kib, "kibibytes,", mib, "mibibytes,", gib, "gibibytes")
 	if file.Mode().IsDir() == true {
 		fmt.Println("Is a directory")
