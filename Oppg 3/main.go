@@ -34,7 +34,7 @@ func main() {
 	}()
 
 	// make a buffer to keep chunks that are read
-	buf := make([]byte, 4094)
+	buf := make([]byte, 0666)
 	for {
 		// read a chunk
 		n, err := fi.Read(buf)
